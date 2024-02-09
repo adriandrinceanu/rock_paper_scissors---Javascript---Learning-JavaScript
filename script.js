@@ -31,9 +31,6 @@ function playRound(playerSelection, computerSelection) {
     let player_winnings = 0;
     let draws = 0;
 
-
-    
-
     for (let i = 0; i < 5; i++) {
 
         let playerSelection = getPlayerChoice();
@@ -43,8 +40,7 @@ function playRound(playerSelection, computerSelection) {
         console.log('player:', playerSelection);
 
         let result = playRound(playerSelection, computerSelection);
-
-
+        
         if (result === 'You win, paper beats rock.' 
         || result === 'You win, rock beats scissors' 
         || result === 'You win, scissors beat paper') {
