@@ -11,8 +11,6 @@ function getPlayerChoice() {
 }
 
 
-
-
 function playRound(playerSelection, computerSelection) {
     let result;
     if (playerSelection === 'paper' && computerSelection === 'rock') {
@@ -47,19 +45,18 @@ function playRound(playerSelection, computerSelection) {
         let result = playRound(playerSelection, computerSelection);
 
 
-        if (result === 'You win, paper beats rock.' && result === 'You win, rock beats scissors' && result === 'You win, scissors beat paper') {
+        if (result === 'You win, paper beats rock.' 
+        || result === 'You win, rock beats scissors' 
+        || result === 'You win, scissors beat paper') {
             player_winnings += 1
         } else if (result === "it's a draw") {
             draws += 1
         } else {
             computer_winnings += 1
         }
-    
         console.log('result:', result);
         }
-        
         console.log(`Computer wins ${computer_winnings} times, player wins ${player_winnings} times and it was draw ${draws} times`);
-
     }
 
 
