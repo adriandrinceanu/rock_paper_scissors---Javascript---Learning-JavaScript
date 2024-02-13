@@ -1,30 +1,43 @@
+const choices = ['rock', 'paper', 'scissors'];
+
 function getComputerChoice() {
-    const strings = ['rock', 'paper', 'scissors'];
-    const randomIndex = Math.floor(Math.random() * strings.length);
-    return strings[randomIndex]
+    const randomIndex = Math.floor(Math.random() * choices.length);
+    return choices[randomIndex]
 }
 
 function getPlayerChoice() {
-    const strings = ['rock', 'paper', 'scissors'];
-    const randomIndex = Math.floor(Math.random() * strings.length);
-    return strings[randomIndex]
+    let myChoice = prompt('Rock, Paper or Scissors?', '');
+    return myChoice
 }
 
 
 function playRound(playerSelection, computerSelection) {
     let result;
+
+    if (playerSelection === computerSelection){
+        return result = "it's a draw"
+    }
+
     if (playerSelection === 'paper' && computerSelection === 'rock') {
         return result = 'You win, paper beats rock.'
     } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
         return result = 'You win, rock beats scissors'
     } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
         return result = 'You win, scissors beat paper'
-    } else if (playerSelection === computerSelection){
-        return result = "it's a draw"
-    } else {
+    }  else {
         return result = `You lose, ${computerSelection} beats ${playerSelection}`
     }
   }
+
+  const rock = document.createElement('button');
+  const paper = document.createElement('button');
+  const scissors = document.createElement('button');
+
+  rock.textContent = 'Rock';
+  paper.textContent = 'Paper';
+  scissors.textContent = 'Scissors';
+
+
  
   function playGame() {
     let computer_winnings = 0;
