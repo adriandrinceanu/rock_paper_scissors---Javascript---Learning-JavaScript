@@ -47,35 +47,25 @@ function playRound(playerSelection, computerSelection) {
   scissors.value = 'scissors';
   scissors.setAttribute('class', 'button')
 
-
-    rock.addEventListener('click', ()=>{
-        let computerSelection = getComputerChoice();
-        let winner = playRound(rock.value, computerSelection);
-        let para = document.createElement('p');
-        para.textContent = winner;
-        content.appendChild(para);
-    });
- 
-    paper.addEventListener('click', ()=>{
-        let computerSelection = getComputerChoice();
-        let winner = playRound(paper.value, computerSelection);
-        let para = document.createElement('p');
-        para.textContent = winner;
-        content.appendChild(para);
-    });
-
-    scissors.addEventListener('click', ()=>{
-        let computerSelection = getComputerChoice();
-        let winner = playRound(scissors.value, computerSelection);
-        let para = document.createElement('p');
-        para.textContent = winner;
-        content.appendChild(para);
-    })
-   
-
   content.appendChild(rock);
   content.appendChild(paper);
   content.appendChild(scissors);
+
+  const buttons = document.querySelectorAll('button');
+
+  buttons.forEach((button) =>{
+
+    button.addEventListener('click', ()=>{
+        let computerSelection = getComputerChoice();
+        let winner = playRound(button.value, computerSelection);
+        let para = document.createElement('p');
+        para.textContent = winner;
+        content.appendChild(para); 
+    });
+
+  });
+
+
 
 
 
