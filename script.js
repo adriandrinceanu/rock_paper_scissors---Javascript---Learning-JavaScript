@@ -36,14 +36,16 @@ function playRound(playerSelection, computerSelection) {
 
   rock.textContent = 'Rock';
   rock.value = 'rock';
+  rock.setAttribute('class', 'button')
 
   paper.textContent = 'Paper';
   paper.value = 'paper';
+  paper.setAttribute('class', 'button')
+
 
   scissors.textContent = 'Scissors';
   scissors.value = 'scissors';
-
-  const buttons = document.querySelectorAll('button');
+  scissors.setAttribute('class', 'button')
 
 
     rock.addEventListener('click', ()=>{
